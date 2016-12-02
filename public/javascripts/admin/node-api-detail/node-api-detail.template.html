@@ -1,0 +1,26 @@
+<form id="node-api-edit"
+      name="$ctrl.nodeEdit"
+      class="form-horizontal form-label-left"
+      ng-submit="$ctrl.submitNode()">
+
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+
+      <ga-panel panel-title="{{ $ctrl.node.name }}" panel-sub-title="Node">
+        <br>
+        <form-field-text field-id="node-api-name"
+                         field-label="Name"
+                         field-placeholder="Name"
+                         field-required="true"
+                         field-value="$ctrl.node.name"></form-field-text>
+      </ga-panel>
+
+      <ga-panel panel-title="Actions">
+        <ga-panel-actions action-form="$ctrl.nodeEdit"
+                          action-close-url="#!/node-apis"
+                          action-allow-delete="$ctrl.nodeId"
+                          on-delete="$ctrl.deleteNode()"></ga-panel-actions>
+      </ga-panel>
+    </div>
+  </div>
+</form>

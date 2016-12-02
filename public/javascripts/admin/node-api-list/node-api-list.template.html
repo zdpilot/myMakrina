@@ -1,0 +1,20 @@
+<ga-panel panel-title="Nodes"
+          panel-query="true"
+          panel-query-string="$ctrl.query"
+          panel-add-record-url="#!/node-apis/add">
+  <table class="table table-hover dataTable">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="node in $ctrl.nodes | filter:$ctrl.query | limitTo:$ctrl.viewLimit">
+      <th scope="row"><a href="#!/node-apis/{{ node._id }}">{{ $index + 1 }}</a></th>
+      <td><a href="#!/node-apis/{{ node._id }}">{{ node.name }}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <a href="#!{{ $ctrl.viewLink }}" ng-if="$ctrl.viewLink && $ctrl.viewLimit < $ctrl.products.length">More...</a>
+</ga-panel>
